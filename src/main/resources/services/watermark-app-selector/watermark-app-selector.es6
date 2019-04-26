@@ -11,8 +11,6 @@ exports.get = req => {
 			description: appName
 		}) );
 
-	log.info("watermark appNames (" + typeof appNames + "): " + JSON.stringify(appNames, null, 2));
-
 	return {
 		contentType: 'application/json',
 		body: {

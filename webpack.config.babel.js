@@ -116,12 +116,12 @@ const SERVER_JS_CONFIG = {
 		rules: [ES_RULE]
 	}, // module
 	optimization: {
-		minimizer: [
+		/*minimizer: [
 			new UglifyJsPlugin({
 				parallel: true, // highly recommended
 				sourceMap: false
 			})
-		]
+		]//*/
 	},
 	output: {
 		path: outputPath,
