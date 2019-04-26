@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+	<filters>
+		<response-filter name="watermark" order="99"/>
+	</filters>
 	<config>
 		<input type="TextLine" name="text">
 			<label>Text</label>
