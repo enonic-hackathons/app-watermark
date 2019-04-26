@@ -23,9 +23,9 @@ const getStyle = cornerDistance => {
 	position: absolute;
     color: white;
     padding: 2px 0;
-    top: ${offset}px;
-    height: ${height}px;
-    width: ${longestSide}px;
+    top: 62px;
+    height: 50px;
+    width: 300px;
     text-align: center;
     font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
 }
@@ -37,11 +37,11 @@ const getStyle = cornerDistance => {
     border-top: dashed white 1px;
 }
 .xp-watermark-container.right {
-    right: -${offset}px;
+    right: -62px;
     transform: rotate(45deg);
 }
 .xp-watermark-container.left {
-    left: -${offset}px;
+    left: -62px;
     transform: rotate(-45deg);
 }
 .xp-watermark-appname {
