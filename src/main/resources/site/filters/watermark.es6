@@ -6,7 +6,14 @@ const AppVersionFinder = __.newBean('com.enonic.app.watermark.AppVersionFinder')
 
 const view = resolve('./watermark.html');
 
-const style = `<style>
+const height = 50;
+
+const getStyle = cornerDistance => {
+	const cornerToRemoteSide = cornerDistance + height;
+	const longestSide = cornerToRemoteSide * 2;
+	const offset = Math.sqrt(2 * (cornerToRemoteSide*cornerToRemoteSide));
+
+	return `<style>
 .xp-watermark-container,
 .xp-watermark-container * {
     box-sizing: border-box;
@@ -16,9 +23,9 @@ const style = `<style>
 	position: absolute;
     color: white;
     padding: 2px 0;
-    top: 62px;
-    height: 50px;
-    width: 300px;
+    top: ${offset}px;
+    height: ${height}px;
+    width: ${longestSide}px;
     text-align: center;
     font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
 }
@@ -30,11 +37,11 @@ const style = `<style>
     border-top: dashed white 1px;
 }
 .xp-watermark-container.right {
-    right: -62px;
+    right: -${offset}px;
     transform: rotate(45deg);
 }
 .xp-watermark-container.left {
-    left: -62px;
+    left: -${offset}px;
     transform: rotate(-45deg);
 }
 .xp-watermark-appname {
@@ -56,6 +63,9 @@ const style = `<style>
     font-size: 12px;
 }
 </style>`;
+};
+
+
 
 exports.responseFilter = (req, res) => {
 	if (req.mode === 'live') {
@@ -87,7 +97,7 @@ exports.responseFilter = (req, res) => {
 			});
 			//log.info("waterMark (" + typeof waterMark + "): " + JSON.stringify(waterMark, null, 2));
 			res.pageContributions.bodyBegin.push(waterMark);
-			res.pageContributions.headEnd.push(style);
+			res.pageContributions.headEnd.push(getStyle(50));
 		}
 
 		//log.info("res (" + typeof res + "): " + JSON.stringify(res, null, 2));
