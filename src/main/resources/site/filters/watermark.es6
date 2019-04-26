@@ -15,14 +15,19 @@ const style = `<style>
 .xp-watermark-container {
 	position: absolute;
     color: white;
-    padding: 5px 40px;
+    padding: 2px 0;
     top: 62px;
     height: 50px;
     width: 300px;
     text-align: center;
-    opacity: 0.75;
-    filter: alpha(opacity=75);
-    
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+}
+.xp-watermark-inner {
+    width: 100%;
+    height: 100%;
+    padding: 3px 0;
+    border-bottom: dashed white 1px;
+    border-top: dashed white 1px;
 }
 .xp-watermark-container.right {
     right: -62px;
@@ -35,13 +40,13 @@ const style = `<style>
 .xp-watermark-appname {
     font-size: 10px;
     display: inline-block;
-    margin: 5px 5px 0;
+    margin: 0 2px 0;
 }
 .xp-watermark-version {
     font-size: 10px;
     font-weight: bold;
     display: inline-block;
-    margin: 5px 5px 0;
+    margin: 0 2px 0;
 }
 .xp-watermark-text {
 	display: inline-block;

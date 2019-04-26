@@ -1,5 +1,7 @@
 <div class="xp-watermark-container" data-th-classappend="${position}" data-th-style="|background-color:${bgcolor}|">
-	<p data-th-if="${app}" class="xp-watermark-appname" data-th-text="${app}"></p>
-	<p data-th-if="${version}" class="xp-watermark-version" data-th-text="${version}"></p>
-	<p data-th-if="${text}" class="xp-watermark-text" data-th-text="${text}"></p>
+	<div class="xp-watermark-inner">
+		<p data-th-if="${app}" class="xp-watermark-appname" data-th-text="${app}"></p>
+		<p data-th-if="${version}" class="xp-watermark-version" data-th-text="${version}"></p>
+		<p data-th-if="${text}" class="xp-watermark-text" data-th-text="${text}"></p>
+	</div>
 </div>
