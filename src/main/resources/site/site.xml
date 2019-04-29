@@ -4,21 +4,24 @@
 		<response-filter name="watermark" order="99"/>
 	</filters>
 	<config>
+		<input type="TextLine" name="text">
+			<label>Label text</label>
+			<help-text>If added, displayed on top</help-text>
+			<occurrences minimum="0" maximum="1"/>
+		</input>
 		<input name="app" type="CustomSelector">
-			<label>Info about app</label>
+			<label>Select app</label>
+			<help-text>If selected, app key and version are displayed</help-text>
 			<occurrences minimum="0" maximum="1"/>
 			<config>
 				<service>watermark-app-selector</service>
 			</config>
 		</input>
-		<input type="TextLine" name="text">
-			<label>Additional text</label>
-			<occurrences minimum="0" maximum="1"/>
-		</input>
 		<input type="TextLine" name="bgcolor">
 			<label>Background color</label>
+			<help-text>Valid CSS colors: HTML hex values with hashtag ("#2244fa" etc), color names ("darkred" etc) or rgb / rgba values</help-text>
 			<occurrences minimum="0" maximum="1"/>
-			<default>#7799ee</default>
+			<default>rgba(0,0,0,.75)</default>
 		</input>
 		<input name="position" type="ComboBox">
 			<label>Label position</label>
