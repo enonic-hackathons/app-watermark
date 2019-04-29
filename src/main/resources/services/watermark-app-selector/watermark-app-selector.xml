@@ -1,0 +1,8 @@
+<service>
+	<allow>
+		<principal>role:system.admin</principal>
+		<principal>role:system.admin.login</principal>
+		<principal>role:cms.cm.app</principal>
+		<principal>role:cms.admin</principal>
+	</allow>
+</service>

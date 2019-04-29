@@ -19,4 +19,4 @@ exports.get = req => {
 			hits: appNames
 		}
 	}
-}
+};
