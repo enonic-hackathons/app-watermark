@@ -4,33 +4,120 @@
 		<response-filter name="watermark" order="99"/>
 	</filters>
 	<config>
-		<input type="TextLine" name="text">
-			<label>Label text</label>
-			<help-text>If added, displayed on top</help-text>
-			<occurrences minimum="0" maximum="1"/>
-		</input>
-		<input name="app" type="CustomSelector">
-			<label>Select app</label>
-			<help-text>If selected, app key and version are displayed</help-text>
-			<occurrences minimum="0" maximum="1"/>
-			<config>
-				<service>watermark-app-selector</service>
-			</config>
-		</input>
-		<input type="TextLine" name="bgcolor">
-			<label>Background color</label>
-			<help-text>Valid CSS colors: HTML hex values with hashtag ("#2244fa" etc), color names ("darkred" etc) or rgb / rgba values</help-text>
-			<occurrences minimum="0" maximum="1"/>
-			<default>rgba(0,0,0,.75)</default>
-		</input>
-		<input name="position" type="ComboBox">
-			<label>Label position</label>
-			<occurrences minimum="1" maximum="1"/>
-			<config>
-				<option value="left">Top left</option>
-				<option value="right">Top right</option>
-			</config>
-			<default>right</default>
-		</input>
+
+		<field-set name="texts">
+			<label >What to display</label>
+			<items>
+				<input name="label" type="TextLine">
+					<label>Label text</label>
+					<help-text>If added, displayed on top</help-text>
+					<occurrences minimum="0" maximum="1"/>
+				</input>
+				<input name="app" type="CustomSelector">
+					<label>Select app</label>
+					<help-text>If selected, app key and version are displayed</help-text>
+					<occurrences minimum="0" maximum="1"/>
+					<config>
+						<service>watermark-app-selector</service>
+					</config>
+				</input>
+
+				<input name="appName" type="CheckBox">
+					<label>Display app name</label>
+					<occurrences minimum="0" maximum="1"/>
+					<default>checked</default>
+				</input>
+				<input name="appVersion" type="CheckBox">
+					<label>Display app version</label>
+					<occurrences minimum="0" maximum="1"/>
+					<default>checked</default>
+				</input>
+
+				<input name="order" type="ComboBox">
+					<label>Order</label>
+					<occurrences minimum="1" maximum="1"/>
+					<config>
+						<option value="labelFirst">Label text before app info</option>
+						<option value="appFirst">App info before label text</option>
+					</config>
+					<default>labelFirst</default>
+				</input>
+			</items>
+		</field-set>
+
+		<field-set name="visuals">
+			<label >How to display it</label>
+			<items>
+				<input type="TextLine" name="bgcolor">
+					<label>Background color</label>
+					<help-text>Valid CSS colors: HTML hex values with hashtag ("#2244fa" etc), color names ("darkred" etc) or rgb / rgba values</help-text>
+					<occurrences minimum="0" maximum="1"/>
+					<default>rgba(0,0,0,.75)</default>
+				</input>
+				<input name="position" type="ComboBox">
+					<label>Label position</label>
+					<occurrences minimum="1" maximum="1"/>
+					<config>
+						<option value="left">Top left corner</option>
+						<option value="right">Top right corner</option>
+					</config>
+					<default>right</default>
+				</input>
+				<input name="fixed" type="CheckBox">
+					<label>Sticky</label>
+					<help-text>Fixed position in the corner; stay visible when scrolling the page</help-text>
+					<occurrences minimum="0" maximum="1"/>
+					<default>checked</default>
+				</input>
+				<input name="cornerDist" type="Long">
+					<label>Distance from corner</label>
+					<help-text>Distance in px, from the corner to the closest edge of the label</help-text>
+					<config>
+						<min>-100</min>
+						<max>200</max>
+					</config>
+					<default>50</default>
+				</input>
+				<input name="width" type="Long">
+					<label>Width of the label</label>
+					<help-text>Width across the label band, in px</help-text>
+					<config>
+						<min>-100</min>
+						<max>200</max>
+					</config>
+					<default>50</default>
+				</input>
+			</items>
+		</field-set>
+
+
+		<field-set name="modes">
+			<label >When to display it</label>
+			<items>
+				<input name="edit" type="CheckBox">
+					<label>Edit mode</label>
+					<help-text>Display over the preview in edit mode (logged in console admins)</help-text>
+					<occurrences minimum="0" maximum="1"/>
+					<default>checked</default>
+				</input>
+				<input name="preview" type="CheckBox">
+					<label>Preview mode</label>
+					<help-text>Display over the preview (logged inconsole admins), and in XP6: the browse mode)</help-text>
+					<occurrences minimum="0" maximum="1"/>
+					<default>checked</default>
+				</input>
+				<input name="inline" type="CheckBox">
+					<label>Inline mode (XP7 only)</label>
+					<help-text>Display over the non-browse mode preview (logged in)</help-text>
+					<occurrences minimum="0" maximum="1"/>
+					<default>checked</default>
+				</input>
+				<input name="live" type="CheckBox">
+					<label>Live</label>
+					<help-text>Display live (NO LOGIN. If used in a prod environment, end users will see the watermark!)</help-text>
+					<occurrences minimum="0" maximum="1"/>
+				</input>
+			</items>
+		</field-set>
 	</config>
 </site>
