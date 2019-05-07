@@ -1,7 +1,10 @@
-<div class="xp-watermark-container" data-th-classappend="${position}" data-th-style="|background-color:${bgcolor}|">
-	<div class="xp-watermark-inner">
-		<p data-th-if="${text}" class="xp-watermark-text" data-th-text="${text}"></p>
-		<p data-th-if="${app}" class="xp-watermark-appname" data-th-text="${app}"></p>
-		<p data-th-if="${version}" class="xp-watermark-version" data-th-text="${version}"></p>
+<div class="xp-watermark-container" data-th-classappend="${position}">
+	<div class="xp-watermark-outer" data-th-style="|background-color:${bgcolor}|" data-th-classappend="${position}">
+		<div class="xp-watermark-inner">
+			<p data-th-if="${label} and ${labelFirst}" class="xp-watermark-text" data-th-text="${label}"></p>
+			<p data-th-if="${app} and ${appName}" class="xp-watermark-app xp-watermark-appname" data-th-text="${app}"></p>
+			<p data-th-if="${version} and ${appVersion}" class="xp-watermark-app xp-watermark-version" data-th-text="${version}"></p>
+			<p data-th-if="${label} and ${appFirst}" class="xp-watermark-text" data-th-text="${label}"></p>
+		</div>
 	</div>
 </div>

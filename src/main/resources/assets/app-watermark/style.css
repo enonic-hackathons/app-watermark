@@ -1,0 +1,62 @@
+.xp-watermark-container,
+.xp-watermark-container * {
+	box-sizing: border-box;
+	pointer-events: none;
+}
+.xp-watermark-container {
+	z-index: 9999;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+}
+.xp-watermark-container.right {
+	right: 0;
+}
+.xp-watermark-container.left {
+	left: 0;
+}
+.xp-watermark-container.fixed {
+	position: fixed;
+}
+.xp-watermark-outer {
+	color: white;
+	padding: 2px 0;
+	top: 36px;
+	height: 50px;
+	width: 300px;
+	text-align: center;
+	font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+}
+.xp-watermark-outer.right {
+	right: -90px;
+	transform: rotate(45deg);
+}
+.xp-watermark-outer.left {
+	left: -90px;
+	transform: rotate(-45deg);
+}
+.xp-watermark-inner {
+	width: 100%;
+	height: 100%;
+	padding: 1px 0 5px;
+	border-bottom: dashed white 1px;
+	border-top: dashed white 1px;
+}
+.xp-watermark-appname {
+	font-size: 10px;
+	display: inline-block;
+	margin: 0 2px 0;
+}
+.xp-watermark-version {
+	font-size: 10px;
+	font-weight: bold;
+	display: inline-block;
+	margin: 0 2px 0;
+}
+.xp-watermark-text {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	font-size: 12px;
+}

@@ -121,7 +121,7 @@ processResources {
 	exclude '**/.gitkeep'
 
 	// Let webpack handle these (rather than gradle)
-	exclude '**/*.css'
+	//exclude '**/*.css'
 	exclude '**/*.es'
 	exclude '**/*.js'
 	exclude '**/*.less'

@@ -23,12 +23,11 @@
 				</input>
 
 				<input name="appName" type="CheckBox">
-					<label>Display app name</label>
+					<label>Display app info: name</label>
 					<occurrences minimum="0" maximum="1"/>
-					<default>checked</default>
 				</input>
 				<input name="appVersion" type="CheckBox">
-					<label>Display app version</label>
+					<label>Display app info: version</label>
 					<occurrences minimum="0" maximum="1"/>
 					<default>checked</default>
 				</input>
@@ -46,7 +45,7 @@
 		</field-set>
 
 		<field-set name="visuals">
-			<label >How to display it</label>
+			<label >How and where to display it</label>
 			<items>
 				<input type="TextLine" name="bgcolor">
 					<label>Background color</label>
@@ -64,10 +63,9 @@
 					<default>right</default>
 				</input>
 				<input name="fixed" type="CheckBox">
-					<label>Sticky</label>
-					<help-text>Fixed position in the corner; stay visible when scrolling the page</help-text>
+					<label>Fixed</label>
+					<help-text>Sticky position in the corner; stay visible when scrolling the page</help-text>
 					<occurrences minimum="0" maximum="1"/>
-					<default>checked</default>
 				</input>
 				<input name="cornerDist" type="Long">
 					<label>Distance from corner</label>
@@ -90,31 +88,30 @@
 			</items>
 		</field-set>
 
-
 		<field-set name="modes">
 			<label >When to display it</label>
 			<items>
 				<input name="edit" type="CheckBox">
-					<label>Edit mode</label>
-					<help-text>Display over the preview in edit mode (logged in console admins)</help-text>
+					<label>Content Studio Edit mode</label>
+					<help-text>Display over the preview in edit mode (logged-in console admins)</help-text>
 					<occurrences minimum="0" maximum="1"/>
 					<default>checked</default>
 				</input>
 				<input name="preview" type="CheckBox">
 					<label>Preview mode</label>
-					<help-text>Display over the preview (logged inconsole admins), and in XP6: the browse mode)</help-text>
+					<help-text>Display over unpublished preview, and in XP 6: also the Content Studio browse preview (logged-in console admins)</help-text>
 					<occurrences minimum="0" maximum="1"/>
 					<default>checked</default>
 				</input>
 				<input name="inline" type="CheckBox">
-					<label>Inline mode (XP7 only)</label>
-					<help-text>Display over the non-browse mode preview (logged in)</help-text>
+					<label>Content Studio Inline mode (only XP 7)</label>
+					<help-text>Display over the browse mode preview in Content Studio in XP 7 (logged-in console admins, all content)</help-text>
 					<occurrences minimum="0" maximum="1"/>
 					<default>checked</default>
 				</input>
 				<input name="live" type="CheckBox">
 					<label>Live</label>
-					<help-text>Display live (NO LOGIN. If used in a prod environment, end users will see the watermark!)</help-text>
+					<help-text>Display live (NO LOGIN, published content. If used in a prod environment, end users will see the watermark!)</help-text>
 					<occurrences minimum="0" maximum="1"/>
 				</input>
 			</items>
