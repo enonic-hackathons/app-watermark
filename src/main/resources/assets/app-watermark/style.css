@@ -21,18 +21,14 @@
 .xp-watermark-outer {
 	color: white;
 	padding: 2px 0;
-	top: 36px;
-	height: 50px;
-	width: 300px;
+	position: relative;
 	text-align: center;
 	font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
 }
 .xp-watermark-outer.right {
-	right: -90px;
 	transform: rotate(45deg);
 }
 .xp-watermark-outer.left {
-	left: -90px;
 	transform: rotate(-45deg);
 }
 .xp-watermark-inner {

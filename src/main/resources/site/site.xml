@@ -32,7 +32,7 @@
 					<default>checked</default>
 				</input>
 
-				<input name="order" type="ComboBox">
+				<input name="order" type="RadioButton">
 					<label>Order</label>
 					<occurrences minimum="1" maximum="1"/>
 					<config>
@@ -45,36 +45,13 @@
 		</field-set>
 
 		<field-set name="visuals">
-			<label >How and where to display it</label>
+			<label >How to display it</label>
 			<items>
 				<input type="TextLine" name="bgcolor">
 					<label>Background color</label>
 					<help-text>Valid CSS colors: HTML hex values with hashtag ("#2244fa" etc), color names ("darkred" etc) or rgb / rgba values</help-text>
 					<occurrences minimum="0" maximum="1"/>
 					<default>rgba(0,0,0,.75)</default>
-				</input>
-				<input name="position" type="ComboBox">
-					<label>Label position</label>
-					<occurrences minimum="1" maximum="1"/>
-					<config>
-						<option value="left">Top left corner</option>
-						<option value="right">Top right corner</option>
-					</config>
-					<default>right</default>
-				</input>
-				<input name="fixed" type="CheckBox">
-					<label>Fixed</label>
-					<help-text>Sticky position in the corner; stay visible when scrolling the page</help-text>
-					<occurrences minimum="0" maximum="1"/>
-				</input>
-				<input name="cornerDist" type="Long">
-					<label>Distance from corner</label>
-					<help-text>Distance in px, from the corner to the closest edge of the label</help-text>
-					<config>
-						<min>-100</min>
-						<max>200</max>
-					</config>
-					<default>50</default>
 				</input>
 				<input name="width" type="Long">
 					<label>Width of the label</label>
@@ -84,6 +61,37 @@
 						<max>200</max>
 					</config>
 					<default>50</default>
+					<occurrences minimum="1" maximum="1"/>
+				</input>
+			</items>
+		</field-set>
+
+		<field-set name="positioning">
+			<label >Where to display it</label>
+			<items>
+				<input name="position" type="RadioButton">
+					<label>Position</label>
+					<occurrences minimum="1" maximum="1"/>
+					<config>
+						<option value="left">Top left corner</option>
+						<option value="right">Top right corner</option>
+					</config>
+					<default>right</default>
+				</input>
+				<input name="cornerDist" type="Long">
+					<label>Distance from corner</label>
+					<help-text>Distance in px, from the corner to the closest edge of the label</help-text>
+					<config>
+						<min>-100</min>
+						<max>200</max>
+					</config>
+					<default>50</default>
+					<occurrences minimum="1" maximum="1"/>
+				</input>
+				<input name="fixed" type="CheckBox">
+					<label>Fixed</label>
+					<help-text>Sticky position in the corner; stay visible when scrolling the page</help-text>
+					<occurrences minimum="0" maximum="1"/>
 				</input>
 			</items>
 		</field-set>

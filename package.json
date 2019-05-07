@@ -1,6 +1,7 @@
 {
   "name": "watermark",
-  "version": "0.0.1",
+  "description": "XP app: Add a label over a website - tag dev/test environments, app versions, etc, in your chosen XP view modes",
+  "version": "0.2.0",
   "author": "Espen Norderud <eno@enonic.com>",
   "license": "Apache-2.0",
   "dependencies": {},
