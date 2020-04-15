@@ -32,13 +32,6 @@ exports.responseProcessor = (req, res) => {
 	//log.info("req (" + typeof req + "): " + JSON.stringify(req, null, 2));
 	//log.info("pre res (" + typeof res + "): " + JSON.stringify(res, null, 2));
 
-	log.info("getSite() (" +
-		(Array.isArray(getSite()) ?
-			("array[" + getSite().length + "]") :
-			(typeof getSite() + (getSite() && typeof getSite() === 'object' ? (" with keys: " + JSON.stringify(Object.keys(getSite()))) : ""))
-		) + "): " + JSON.stringify(getSite(), null, 2)
-	);
-
 	const siteConfig = getSiteConfig();
 	//log.info("siteConfig (" + typeof siteConfig + "): " + JSON.stringify(siteConfig, null, 2));
 
