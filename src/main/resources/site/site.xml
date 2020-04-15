@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<filters>
-		<response-filter name="watermark" order="99"/>
-	</filters>
-	<config>
+	<processors>
+		<response-processor name="watermark" order="99"/>
+	</processors>
+	<form>
 
-		<field-set name="texts">
+		<field-set>
 			<label >What to display</label>
 			<items>
 				<input name="label" type="TextLine">
@@ -44,7 +44,7 @@
 			</items>
 		</field-set>
 
-		<field-set name="visuals">
+		<field-set>
 			<label >How to display it</label>
 			<items>
 				<input type="TextLine" name="bgcolor">
@@ -66,7 +66,7 @@
 			</items>
 		</field-set>
 
-		<field-set name="positioning">
+		<field-set>
 			<label >Where to display it</label>
 			<items>
 				<input name="position" type="RadioButton">
@@ -96,7 +96,7 @@
 			</items>
 		</field-set>
 
-		<field-set name="modes">
+		<field-set>
 			<label >When to display it</label>
 			<items>
 				<input name="edit" type="CheckBox">
@@ -124,5 +124,5 @@
 				</input>
 			</items>
 		</field-set>
-	</config>
+	</form>
 </site>
